@@ -8,7 +8,7 @@ GREEN = "\033[92m"
 BLUE = "\033[94m"
 CYAN = "\033[96m"
 
-def print_board(model, cells, board):
+def print_board(model, cells):
     """
     Prints the Sudoku board
     """
@@ -72,7 +72,7 @@ def result(BOARD):
     if solver.check() == z3.sat:
         model = solver.model()
         print(f"{GREEN}solution found{RESET}")
-        print_board(model, cells,BOARD)
+        print_board(model, cells)
     else:
         print(f"{RED}No solution found{RESET}")
 
